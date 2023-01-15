@@ -6,45 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
     <title>Menu Responsivo</title>
 </head>
 
 <body>
-    <header>
-        <nav class="nav-bar">
-            <div class="logo">
-                <h1>Logo</h1>
-            </div>
-            <div class="nav-list">
-                <ul>
-                    <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link"> Sobre</a></li>
-                </ul>
-            </div>
-            <div class="login-button">
-                <button><a href="#">Entrar</a></button>
-            </div>
-
-            <div class="mobile-menu-icon">
-                <button onclick="menuShow()"><img class="icon" src="./img/menu_white.svg" alt=""></button>
-            </div>
-        </nav>
-        <div class="mobile-menu">
-            <ul>
-                <li class="nav-item"><a href="#" class="nav-link">Início</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Projetos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Sobre</a></li>
-            </ul>
-
-            <div class="login-button">
-                <button><a href="#">Entrar</a></button>
-            </div>
+    <nav>
+        <div class="logo">
+            <h1>Logo</h1>
         </div>
-    </header>
+        <button onclick="abrirMenu()">&#9776;</button>
+        <ul id="botoesMenu">
+            <a href="#sessão1">
+                <li>
+                    <p>sessão1</p>
+                </li>
+            </a>
+            <a href="#sessão2">
+                <li>
+                    <p>sessão2</p>
+                </li>
+            </a>
+            <a href="#sessão3">
+                <li>
+                    <p>sessão3</p>
+                </li>
+            </a>
+            <a href="#sessao4">
+                <li>
+                    <p>sessao4</p>
+                </li>
+            </a>
+            <a href="#sessão4">
+                <li>
+                    <p>sessão4</p>
+                </li>
+            </a>
+        </ul>
+    </nav>
 
-    <script src="./js/script.js"></script>
+    <script>
+        const arrayHeight = document.getElementsByClassName('height-nav');
+        const navHeight = document.getElementsByTagName('nav')[0].clientHeight;
+
+        for (let navHeightObj of arrayHeight)
+            navHeightObj.style.height = navHeight + 'px';
+
+        function abrirMenu() {
+            const botoesMenu = document.getElementById('botoesMenu');
+
+            botoesMenu.className = botoesMenu.className.includes('responsivo') ? '' : 'responsivo'
+        }
+    </script>
 </body>
-<!-- FEITO POR: LARISSA V. KICH  -->
 
 </html>
